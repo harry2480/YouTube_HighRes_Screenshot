@@ -1,0 +1,38 @@
+.yts-button {
+  // YouTube native button styles inheritance (approximate)
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  color: inherit;
+  text-align: center;
+  font-size: 100%;
+  cursor: pointer;
+  height: 100%;
+  opacity: 0.9;
+  transition: opacity 0.1s cubic-bezier(0.4, 0, 1, 1);
+  vertical-align: top;
+  width: 48px; // Standard YouTube control button width
+  fill: #fff;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  & svg {
+    width: 100%;
+    height: 100%;
+    fill: inherit;
+  }
+
+  &--capturing {
+    cursor: wait;
+    opacity: 0.5;
+    animation: yts-pulse 1s infinite;
+  }
+}
+
+@keyframes yts-pulse {
+  0% { opacity: 0.5; }
+  50% { opacity: 0.8; }
+  100% { opacity: 0.5; }
+}

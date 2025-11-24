@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube High-Res Screenshot",
+  "version": "1.0.0",
+  "description": "Take high-resolution screenshots of YouTube videos without UI elements.",
+  "action": {
+    "default_popup": "src/popup/index.html",
+    "default_title": "Take Screenshot"
+  },
+  "permissions": [
+    "activeTab"
+  ],
+  "host_permissions": [
+    "*://www.youtube.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://www.youtube.com/*"],
+      "js": ["src/core/main.ts"],
+      "run_at": "document_end"
+    }
+  ]
+}
